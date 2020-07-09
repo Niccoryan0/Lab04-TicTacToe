@@ -30,9 +30,9 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+			//Complete this method and utilize the rest of the class structure to play the game.
 
-            /*
+			/*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
              * 
              * A few things to get you started:
@@ -46,16 +46,50 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
+
+			PlayerOne.IsTurn = true;
+			Winner = new Player();
+			int counter = 0;
+
+			while (counter < 9)
+			{
+				Board.DisplayBoard();
+				NextPlayer().TakeTurn();
+				counter++;
+
+				if (CheckForWinner(Board))
+                {
+					Winner = PlayerOne;
+					break;
+                }
+				else if(counter == 9)
+				{
+					break;
+                }
+				SwitchPlayer();
+				NextPlayer().TakeTurn();
+
+				if (CheckForWinner(Board))
+				{
+					Winner = PlayerTwo;
+					break;
+				}
+
+				counter++;
+			}
+
+			Board.DisplayBoard();
+			return Winner;
 			
 		}
 
 
-		/// <summary>
-		/// Check if winner exists
-		/// </summary>
-		/// <param name="board">current state of the board</param>
-		/// <returns>if winner exists</returns>
-		public bool CheckForWinner(Board board)
+        /// <summary>
+        /// Check if winner exists
+        /// </summary>
+        /// <param name="board">current state of the board</param>
+        /// <returns>if winner exists</returns>
+        public bool CheckForWinner(Board board)
 		{
 			int[][] winners = new int[][]
 			{

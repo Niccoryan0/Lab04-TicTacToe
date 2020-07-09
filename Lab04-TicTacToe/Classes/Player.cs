@@ -57,11 +57,16 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-		/// <summary>
-		/// Handles users taking turns, calls the GetPosition method to get their choice of location, and replaces the position with their marker if it is not already used. It is called in the Play method in the Game class.
-		/// </summary>
-		/// <param name="board">Current game board</param>
-		public void TakeTurn(Board board)
+        internal void TakeTurn()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Handles users taking turns, calls the GetPosition method to get their choice of location, and replaces the position with their marker if it is not already used. It is called in the Play method in the Game class.
+        /// </summary>
+        /// <param name="board">Current game board</param>
+        public void TakeTurn(Board board)
 		{
 			IsTurn = true;
 
