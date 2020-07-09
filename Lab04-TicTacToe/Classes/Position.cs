@@ -10,7 +10,7 @@ namespace Lab04_TicTacToe.Classes
 		public int Column { get; set; }
 
 		/// <summary>
-		/// Position on the gameboard being initialized 
+		/// Position on the gameboard being initialized
 		/// </summary>
 		/// <param name="row">row number</param>
 		/// <param name="column">column number</param>

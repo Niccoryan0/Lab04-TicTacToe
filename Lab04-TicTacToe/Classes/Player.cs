@@ -17,7 +17,11 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+		/// <summary>
+		/// Prompts the player for a position on the board and calls PositionForNumber to convert it to a row and column. It is called in the TakeTurn method.
+		/// </summary>
+		/// <param name="board">The current game board</param>
+		/// <returns>Coordinate (in the form of row and column)</returns>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -28,10 +32,13 @@ namespace Lab04_TicTacToe.Classes
 				desiredCoordinate = PositionForNumber(position);
 			}
 			return desiredCoordinate;
-
 		}
 
-
+		/// <summary>
+		/// Takes in a numerical value and converts it to corresponding game board position. It is called in the GetPosition method and the CheckForWinner method in the Game class.
+		/// </summary>
+		/// <param name="position">Numeric value from 1 to 9 representing a position on the game board</param>
+		/// <returns>The Position object that represents the numeric value passed in, or null if the position is not an integer from 1 to 9.</returns>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -50,7 +57,10 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
+		/// <summary>
+		/// Handles users taking turns, calls the GetPosition method to get their choice of location, and replaces the position with their marker if it is not already used. It is called in the Play method in the Game class.
+		/// </summary>
+		/// <param name="board">Current game board</param>
 		public void TakeTurn(Board board)
 		{
 			IsTurn = true;
@@ -59,6 +69,7 @@ namespace Lab04_TicTacToe.Classes
 
 			Position position = GetPosition(board);
 
+			//TODO: Fix the bug.
 			if (Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
 			{
 				board.GameBoard[position.Row, position.Column] = Marker;
