@@ -32,7 +32,6 @@ Then select and open ```Lab04-TicTacToe.sln```
 ![Start](assets/Lab04-TicTacToeStart.png)
 #### Application in Action
 ![In action](assets/Lab04-InProgress.png)
-
 #### Application End
 ![End](assets/Lab04-End.png)
 
