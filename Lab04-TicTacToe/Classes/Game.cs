@@ -53,8 +53,9 @@ namespace Lab04_TicTacToe.Classes
 
 			while (counter < 9)
 			{
+				Console.Clear();
 				Board.DisplayBoard();
-				NextPlayer().TakeTurn();
+				NextPlayer().TakeTurn(Board);
 				counter++;
 
 				if (CheckForWinner(Board))
@@ -66,18 +67,21 @@ namespace Lab04_TicTacToe.Classes
 				{
 					break;
                 }
+				Console.Clear();
 				SwitchPlayer();
-				NextPlayer().TakeTurn();
+				Board.DisplayBoard();
 
+				NextPlayer().TakeTurn(Board);
+				counter++;
 				if (CheckForWinner(Board))
 				{
 					Winner = PlayerTwo;
 					break;
 				}
 
-				counter++;
+				SwitchPlayer();
 			}
-
+			Console.Clear();
 			Board.DisplayBoard();
 			return Winner;
 			

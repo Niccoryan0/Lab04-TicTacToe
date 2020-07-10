@@ -57,10 +57,6 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-        internal void TakeTurn()
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Handles users taking turns, calls the GetPosition method to get their choice of location, and replaces the position with their marker if it is not already used. It is called in the Play method in the Game class.
@@ -75,14 +71,12 @@ namespace Lab04_TicTacToe.Classes
 			Position position = GetPosition(board);
 
 			//TODO: Fix the bug.
-			if (Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
-			{
-				board.GameBoard[position.Row, position.Column] = Marker;
-			}
-			else
-			{
+			while(!Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
+            {
 				Console.WriteLine("This space is already occupied");
+				position = GetPosition(board);
 			}
+			board.GameBoard[position.Row, position.Column] = Marker;
 		}
 	}
 }
