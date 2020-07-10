@@ -5,11 +5,18 @@ namespace Lab04_TicTacToe
 {
     class Program
     {
+        /// <summary>
+        /// Runs the UI from StartGame().
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             StartGame();
         }
 
+        /// <summary>
+        /// Get's the player's names, instantiates the players and game and handles displaying a message for the winner after game.Play() runs.
+        /// </summary>
         static void StartGame()
         {
             // TODO: Setup your game. Create a new method that creates your players and instantiates the game class. Call that method in your Main method.

@@ -70,7 +70,6 @@ namespace Lab04_TicTacToe.Classes
 
 			Position position = GetPosition(board);
 
-			//TODO: Fix the bug.
 			while(!Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
             {
 				Console.WriteLine("This space is already occupied");
