@@ -1,4 +1,4 @@
-# Lab 03 - Tic Tac Toe
+# Lab 04 - Tic Tac Toe
 
 *Author: Nicco Ryan, Na'ama Bar-llan, Peyton Cysewski*
 
