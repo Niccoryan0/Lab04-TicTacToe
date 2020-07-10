@@ -119,13 +119,31 @@ namespace TicTacTests
         }
 
         [Fact]
-        public void CanConvertNumsToCoordinates()
+        public void CanConvertNumsToCoordinatesColumn()
         {
             Position result = Player.PositionForNumber(5);
             Position expected = new Position(1, 1);
-            Assert.Equal(expected, result);
+            Assert.Equal(expected.Column, result.Column);
         }
 
+        [Fact]
+        public void CanConvertNumsToCoordinatesRow()
+        {
+            Position result = Player.PositionForNumber(5);
+            Position expected = new Position(1, 1);
+            Assert.Equal(expected.Row, result.Row);
+        }
+
+        [Fact]
+        public void CanTestPlayerCorrectly()
+        {
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Game game = new Game(p1, p2);
+            p1.IsTurn = true;
+            Player result = game.NextPlayer();
+            Assert.Equal(result.IsTurn, p1.IsTurn);
+        }
 
     }
 }
